@@ -68,17 +68,17 @@ function getDayInfo(str) {
   let months = ['Января', 'Февраль', 'Марта', 'Апреля', 'Мая', 'Июня', 'Июля', 'Августа', 'Сентября', 'Октября', 'Ноября', 'Декабря'];
 
   function getWeekNumber(num) {
-    if (num > 0 && num <=7)   {return '1 неделя';}
-    if (num > 7 && num <=14)  {return '2 неделя';}
-    if (num > 14 && num <=21) {return '3 неделя';}
-    if (num > 21 && num <=28) {return '4 неделя';}
-    if (num > 28 && num <31)  {return '5 неделя';}
+    if (num > 0 && num <=7)   {return '1';}
+    if (num > 7 && num <=14)  {return '2';}
+    if (num > 14 && num <=21) {return '3';}
+    if (num > 21 && num <=28) {return '4';}
+    if (num > 28 && num <=31)  {return '5';}
     else{return 'неверная дата';}
   }
   let arr = str.split('.');
   let date = new Date(arr[2], arr[1]-1, arr[0]);
 
-  let newStr = days[date.getDay()] + ', ' + getWeekNumber(date.getDate()) + ' '+ months[date.getMonth()] + ' ' + date.getFullYear()+ ' ' + 'года.';
+  let newStr = days[date.getDay()] + ', ' + getWeekNumber(date.getDate())+' неделя' + ' '+ months[date.getMonth()] + ' ' + date.getFullYear()+ ' ' + 'года.';
   return newStr;
 }
 
